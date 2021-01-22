@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VeganNiche</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <p> Restaurant Layout</p>
+    <%= link_to("All Restaurants", restaurants_path) %>
+    <%= link_to("New Restaurant", new_restaurant_path) %>
+    <%= link_to("All Cuisines", cuisines_path) %>
+
+    <%= yield %>
+  </body>
+</html>
