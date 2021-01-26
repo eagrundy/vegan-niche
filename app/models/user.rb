@@ -2,13 +2,11 @@ class User < ApplicationRecord
     has_many :reviews
     has_many :restaurants, through: :reviews
 
+    validates :password, presence: true, length: {within: 5...32}
+    
+    validates :username, presence: true
+    validates :email, presence: true, uniqueness: true
+    
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
-
-    validates :email, :username, presence: true
-    validates :email, uniqueness: true
-
-
-
 
 end

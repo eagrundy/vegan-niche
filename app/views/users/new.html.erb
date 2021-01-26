@@ -1,6 +1,9 @@
-<h2> Create your account: </h2>
-<%= form_tag users_path do %>
-    <%= render 'form' %>
-   <% end %>
+<div class="container">
+<h2> Create your account here: </h2></div>
 
-   <%= submit_tag "Create Account" %>
+<%= render 'form' %>
+
+<br>
+<h4>Already have an account?</h4>
+<%= button_to "Log In", login_path %><br>
+<%= button_to "Sign Up with Facebook", '/auth/facebook' %><br>

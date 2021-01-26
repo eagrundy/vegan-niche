@@ -1,26 +1,31 @@
 class UsersController < ApplicationController
 
     def new
-        if logged_in?
-            redirect_to user_path(current_user)
-        else
-            @user = User.new
-        end
+        @user = User.new
     end
 
     def create
         @user = User.new(user_params)
         if @user.save
-            login(@user)
-            redirect_to @user
-            flash[:success] = "You've created your account!"
+            #log them in
+            session[:user_id] = @user.id
+            #redirect to show page
+            redirect_to user_path(@user)
         else
             render :new
         end
     end
 
     def show
-        @user = User.find(params[:id])
+        if logged_in?
+            @user = User.find(params[:id])
+        else
+            redirect_to '/'
+        end
+    end
+
+    def index
+        @users = User.all
     end
 
     private
