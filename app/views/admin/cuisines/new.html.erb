@@ -1,0 +1,21 @@
+<h1>New Cuisine</h1>
+
+<%= render partial: 'restaurants/errors', locals: {model: @cuisine}%>
+
+<%= form_with(model: @cuisine) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %> <br>
+    <hr>
+    New Restaurants: <br>
+    <%= f.fields_for :restaurants do |r|%>
+        <%= r.label("Name:") %>
+        <%= r.text_field(:name) %> <br>
+        <%= r.label("Vegan Options:") %>
+        <%= r.text_area(:options) %> <br>
+        <%= r.label("Source:") %>
+        <%= r.text(:source) %> <br>
+        <%= r.label("Image:") %>
+        <%= r.text(:image_url) %> <br>
+    <% end %>
+    <%= f.submit %>
+<% end %>

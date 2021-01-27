@@ -1,4 +1,4 @@
-<h1>Restaurants Created</h1>
+<h1>Created Restaurants</h1>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.cuisine_id %></td>
+        <td><%= restaurant.cuisine.name %></td>
         <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', admin_restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></td>

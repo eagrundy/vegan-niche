@@ -1,0 +1,10 @@
+
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.image_url %></td>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.options %></td>
+        <td><%= restaurant.cuisine.name %></td>
+        <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+      </tr>
+    <% end %>

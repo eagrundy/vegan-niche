@@ -25,7 +25,7 @@
 
 <p>
   <strong>Cuisine:</strong>
-  <%= @restaurant.cuisine_id %>
+  <%= @restaurant.cuisine.name%>
 </p>
 
 <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |

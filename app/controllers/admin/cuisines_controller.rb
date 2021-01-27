@@ -5,7 +5,6 @@ class Admin::CuisinesController < ApplicationController
 
     def new
         @cuisine = Cuisine.new
-        render layout: 'restaurant'
     end
 
     def create

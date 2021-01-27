@@ -1,0 +1,12 @@
+<h1> <%= @cuisine.name %> </h1>
+
+<!-- <ul>
+    <%= render @cuisine.restaurants %>
+</ul> -->
+
+<% @cuisine.restaurants.each do |restaurant|%>
+ <li><%= link_to(name_and_cuisine(restaurant), restaurant_path(restaurant)) %></li>
+<% end %>
+
+<hr>
+<%= link_to "New Restaurant", new_cuisine_restaurant_path(@cuisine) %>
