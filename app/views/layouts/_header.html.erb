@@ -1,0 +1,12 @@
+<ul>
+  <% if logged_in? %>
+  <li><%= link_to 'Home', restaurants_path %></li>
+  <li><%= link_to 'View Cuisines', cuisines_path %></li>
+  <li><%= link_to 'Search' %></li>
+  <% if current_user.admin? %>
+  <li><%= link_to 'Admin Restaurants', admin_restaurants_path %></li>
+  <% end %>
+  <li><%= link_to 'My Account', user_path(current_user) %></li>
+  <li><%= link_to 'Logout', logout_path, method: :delete %> </li>
+  <% end %>
+  </ul>

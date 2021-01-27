@@ -15,12 +15,9 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect_to user_path(@user)
-        elsif @user == nil
-            flash[:alert] = "User not found."
-            redirect_to login_path(@user)
         else
-            flash[:alert] = "Email and/or Password incorrect"
-            redirect_to login_path(@user)
+            flash[:error] = "Email and/or Password incorrect"
+            redirect_to login_path
         end
     end
     # user = User.find_by(:email => params[:user][:email])

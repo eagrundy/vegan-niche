@@ -1,6 +1,8 @@
 
+<center>
+<br><br>
+<div class="bigbox">
 <h2>Log In Page</h2>
-<div class="container">
 <%=form_with url: '/login', method: :post do |f|%>
     <%= f.label :email %><br>
     <%= f.email_field :email %>
@@ -10,9 +12,12 @@
     <br><br>
     <%= f.submit "Log In" %>
 <% end %>
-</div>
+
 <br>
 
 <%= button_to "Log in with Facebook", '/auth/facebook' %><br>
 <h4> Don't have an account?
-<button><%= link_to "Create Account", signup_path %></button>
+<button><%= link_to "Create Account", signup_path %></button><br><br>
+<%= link_to 'Back to Homepage', root_path %>
+</div></div>
+</center>

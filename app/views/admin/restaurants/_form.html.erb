@@ -1,0 +1,22 @@
+<%= form_with(model: [:admin, @restaurant], local: true) do |f| %>
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %><br><br>
+
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br><br>
+  
+    <%= f.label :address %><br>
+    <%= f.text_field :address %><br><br>
+  
+    <%= f.label :options %><br>
+    <%= f.text_field :options %><br><br>
+
+    <%= f.label :source %><br>
+    <%= f.text_field :source %><br><br>
+
+    <%= f.label :cuisine_id %><br>
+    <%= f.text_field :cuisine_id %><br><br><br>
+ 
+  <%= f.submit %>
+<% end %>
+ 

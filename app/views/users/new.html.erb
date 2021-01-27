@@ -1,9 +1,17 @@
-<div class="container">
-<h2> Create your account here: </h2></div>
+<center>
+<div class="bigbox">
+<h2> Create your account here: </h2>
+<div class="box1">
+</div>
 
 <%= render 'form' %>
 
+<br><br></div>
 <br>
+<%= button_to "Sign Up with Facebook", '/auth/facebook' %><br><br>
 <h4>Already have an account?</h4>
 <%= button_to "Log In", login_path %><br>
-<%= button_to "Sign Up with Facebook", '/auth/facebook' %><br>
+<%= link_to 'Back to Homepage', root_path %>
+
+</div>
+</center>
