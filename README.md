@@ -2,10 +2,11 @@
 ## A Ruby on Rails application
 
 **Description:**
-If you are vegan or knows someone who is, you might know how difficult it is to find vegan options at non-vegan restaurants. 
+If you are vegan or know someone who is, you might know how difficult it is to find vegan options at non-vegan restaurants. 
 
 This is my Phase Three Project for Flatiron School's Software Engineering Bootcamp Program. 
-This application allows users to see which non-vegan restaurants offer vegan options, hidden or not. 
+This application allows users to see which non-vegan restaurants offer vegan options, hidden in the menu or not. 
+
 A User can create an account, which allows them to:
 - Log in, Log out
 - Views restaurants' posts
@@ -21,7 +22,8 @@ The Admin user can:
 
 **Instalation**
 Clone from github:
-    $ git clone https://github.com/eagrundy/vegan-survival-guide
+
+    $ git clone https://github.com/eagrundy/vegan-niche
     
     $ bundle install
     
