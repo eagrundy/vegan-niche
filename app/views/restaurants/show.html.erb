@@ -29,3 +29,18 @@
 </p>
 
 <%= link_to 'Back', restaurants_path %>
+
+<div class="all-restaurants">
+    <% @restaurants.order('updated_at DESC').each do |r| %>
+    <div class="card-text">
+    <h3><%= link_to(restaurant_name(r), restaurant_path(r)) %></h3>
+    <p><img src="<%= r.image_url %>" alt="<%= r.name %>" height="200" width="270"></p><br>
+    <p><strong>Name: </strong><%= r.name %></pr>
+    <p><strong>Vegan Options:</strong> <%= r.options %></p>
+    <p><strong>Cuisine: </strong><%= r.cuisine.name %></p>
+    <%= link_to 'Read more', r %>
+    </p>
+    <br><br>
+    </div>
+    <% end %>
+</div>

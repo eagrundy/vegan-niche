@@ -7,4 +7,8 @@ module RestaurantsHelper
             render partial: "cuisine_select", locals: {f: f}
         end
     end
+
+    def restaurant_name(restaurant)
+        "#{restaurant.name}"
+    end
 end

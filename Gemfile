@@ -26,6 +26,8 @@ gem 'dotenv-rails'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook'
 
+gem 'faker'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -1,6 +1,7 @@
 class Admin::RestaurantsController < ApplicationController
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
     before_action :check_if_admin
+    include RestaurantsHelper
 
     def index
         @restaurants = Restaurant.all
