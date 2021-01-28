@@ -1,24 +1,40 @@
-# README
+# Vegan Niche
+## A Ruby on Rails application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Description:**
+If you are vegan or knows someone who is, you might know how difficult it is to find vegan options at non-vegan restaurants. 
 
-Things you may want to cover:
+This is my Phase Three Project for Flatiron School's Software Engineering Bootcamp Program. 
+This application allows users to see which non-vegan restaurants offer vegan options, hidden or not. 
+A User can create an account, which allows them to:
+- Log in, Log out
+- Views restaurants' posts
+- Leave reviews
+- View restaurants through Cuisines
+- Search posts by keyword
 
-* Ruby version
+The Admin user can:
+- create, edit, and delete Posts
+- View users' reviews
+- View a list with created restaurants' posts 
+- Search posts by keyword
 
-* System dependencies
+**Instalation**
+Clone from github:
+    $ git clone https://github.com/eagrundy/vegan-survival-guide
+    
+    $ bundle install
+    
+Migrations:
 
-* Configuration
+    $ rails db:migrate
 
-* Database creation
+    $ rails db:seed
 
-* Database initialization
+* Start your rails server with $rails s and launch your localhost:3000 or the http:// provided.
 
-* How to run the test suite
+**License:**
+This Rails project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Collaboration**
+Pull Requests are welcome on GitHub. 
