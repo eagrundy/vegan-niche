@@ -13,13 +13,21 @@
 </div>
 <br>
 <div>
-<h3>Reviews</h3>
-<%= form_for @review do |f| %>
-  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-  <%= f.text_area :content, placeholder: 'Add your review here', class: 'form-control' %>
-  <br />
-  <%= f.submit 'Post Your Review', class: 'btn btn-custom' %>
-<% end %>
-<br />
-<%= display_reviews %>
+  <hr />
+    <h3>Review this restaurant</h3>
+      <%= form_for(@review) do |f| %>
+        <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+        <%= f.label("Rating:") %>
+        <%= f.select(:rating, 1..5) %> <br><br>
+        <%= f.text_area :content, placeholder: 'Add your review here', class: 'form-control' %>
+        <br><br>
+        <%= f.submit 'Post Your Review', class: 'btn btn-custom' %>
+    <% end %>
+    <hr />
+    <br />
+    
+    <%= display_reviews %>
+
+  <hr />
 </div>
+  

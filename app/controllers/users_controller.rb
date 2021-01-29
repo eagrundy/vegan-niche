@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     def show
         if logged_in?
             @user = User.find(params[:id])
+            @user_restaurants = Restaurant.where(user_id: @user.id)
         else
             redirect_to '/'
         end

@@ -1,10 +1,13 @@
+<h3><u> Reviews </u></h3>
 <% reviews.each do |review| %>
-    </div>
-        <div class="col-md-10">
-            <div class="card-body">
-                <h5 class="card-title"><%= link_to "#{ review.user.username }, user_path( review.user ) %></h5>
-                <p class="card-text"><%= review.content %></p>
-            </div>
-        </div>
-    </div>
+    <h5> By: <%= review.user.username %></h5>
+    <h6> Reviewed on: <%= review.user.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+    <%= review.generate_stars %><br><br>
+    <%= review.content %><br><br>
+<% end %>
+
+<br>
+<% if current_user == @user %>
+<%= link_to "Edit Your Review", edit_user_path %> <br><br>
+<%= link_to "Delete Your Review", user_path(@user), method: :delete, data: { confirm: "You sure?" } %>
 <% end %>

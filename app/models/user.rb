@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_many :reviews, dependent: :destroy
-    has_many :restaurants, through: :reviews
+    # accepts_nested_attributes_for :reviews
+    has_many :reviewed_restaurants, through: :reviews, source: :restaurant
+    # has_many :restaurants, through: :reviews
 
     validates :password, presence: true, length: {within: 5...32}
     

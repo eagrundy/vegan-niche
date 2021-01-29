@@ -3,11 +3,14 @@
 <p><strong>Your Email: </strong> <%= current_user.email %><br></p>
 <br>
 
-<h2> Your Reviews: </h2>
 
 <ol>
-    
-
+<div>
+<h2> Your Reviewed Restaurants: </h2><br>
+<% @user.reviewed_restaurants.each do |r| %>
+    <%= link_to "#{r[:name]}", restaurant_path(r)%><br>
+<%end%>
+</div>
 </ol>
 
 <br><br>

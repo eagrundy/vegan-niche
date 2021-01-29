@@ -52,3 +52,9 @@ Restaurant.create(
     source: "vegknowledge.com", 
     image_url: "https://www.vegknowledge.com/wp-content/uploads/elementor/thumbs/Crispy-Potato-Pancake-e1568671295749-odvg02tax54b43t4v080uuhy1nj9p7jxlmnkqo8r14.jpg", 
     cuisine_id: rand(1..10))
+
+Review.create(
+    content: "Great options",
+    rating: 4,
+    user_id: rand(1...2),
+    restaurant_id: rand(1...3))

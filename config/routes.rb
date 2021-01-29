@@ -15,12 +15,16 @@ Rails.application.routes.draw do
   
   resources :users
   resources :restaurants, only: [:index, :show]
+  resources :reviews, only: [:create]
   
   resources :cuisines,  only: [:new, :create, :index, :show] do
     resources :restaurants, only: [:new, :create, :index, :show]
   end
-  # resources :reviews
-  
+
+  # resources :restaurants do
+  #   resources :reviews, only: [:create]
+  # end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

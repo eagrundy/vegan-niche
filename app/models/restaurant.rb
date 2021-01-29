@@ -13,7 +13,7 @@ class Restaurant < ApplicationRecord
         if attr["name"].present?
             self.cuisine = Cuisine.find_or_create_by(attr)
         end
-        # associate it with the restaurant
+        
         
     end
 end
