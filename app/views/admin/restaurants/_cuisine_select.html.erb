@@ -1,6 +1,4 @@
+
 <%= f.label("Existing Cuisines")%><br>
 <%= f.collection_select(:cuisine_id, Cuisine.order(:name), :id, :name, prompt: true) %><br>
-    <%= f.fields_for :cuisine do |c|%>
-      <br><%= c.label("New Cuisine")%><br>
-      <%= c.text_field(:name) %> <br>
-    <% end %>
+    

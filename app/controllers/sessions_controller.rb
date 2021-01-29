@@ -20,15 +20,6 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
-    # user = User.find_by(:email => params[:user][:email])
-        # returns (forbidden) unless user.authenticate(user_params[:password])
-        # if user && user.authenticate(params[:user][:password])
-        #     session[:user_id] = user.id
-        #     redirect_to user_path(user)
-        # else
-        #     flash[:message] = "Incorrect email and/or password. Please try again."
-        #     redirect_to login_path
-        # end
         
 
     def facebook

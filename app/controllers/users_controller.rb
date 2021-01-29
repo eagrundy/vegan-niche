@@ -24,9 +24,35 @@ class UsersController < ApplicationController
         end
     end
 
-    def index
-        @users = User.all
+    def edit
+        @user = User.find(params[:id])
+        if @user != current_user
+          flash[:message] = "Not your profile, so you can't edit it."
+          redirect_to user_path
+        end
     end
+
+    def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+          redirect_to @user
+        else
+          render :edit 
+        end
+    end
+
+    def destroy
+        if logged_in?
+            User.find_by_id(current_user.id).destroy
+            session.clear
+            flash[:notice] = "Your account has been deleted!"
+            redirect_to root_path
+        else
+            flash[:message] = "Not authorized to delete."
+            redirect_to user_path
+        end
+    end
+
 
     private
 

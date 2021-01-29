@@ -1,6 +1,6 @@
 
-<h1>Welcome, <%= @user.username %></h1><br>
-<h4>Email: <%= current_user.email %><br></h4>
+<h1>Welcome, <%= @user.username %> ! </h1><br>
+<p><strong>Your Email: </strong> <%= current_user.email %><br></p>
 <br>
 
 <h2> Your Reviews: </h2>
@@ -10,6 +10,8 @@
 
 </ol>
 
-<%=  form_tag( '/logout', method:'delete') do %>
-    <%= submit_tag "Log out" %>
+<br><br>
+<% if current_user == @user %>
+<%= link_to "Edit Your Account", edit_user_path %> <br><br>
+<%= link_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "You sure?" } %>
 <% end %>

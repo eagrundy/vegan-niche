@@ -1,46 +1,25 @@
-<p>
-  <%= @restaurant.image_url %>
-</p>
+<br><br><br>
+<div class="bigbox">
+  <div class="box1">
+  <br>
+  <h2><strong><u><%= @restaurant.name %></u></strong></h2>
+  <p><img src="<%= @restaurant.image_url %>" height="200" width="270"></p>
+  <p><strong>Vegan Options:</strong> <%= @restaurant.options %></p><br>
+  <p><strong>Info Source:</strong> <%= @restaurant.source %></p><br>
+  <p><strong>Cuisine: </strong><%= @restaurant.cuisine.name %></p>
+  <h6><p><strong>Updated at: </strong> <%= @restaurant.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></p></h6><br>
+  <%= link_to 'Back', restaurants_path %>
+  </div>
+</div>
 <br>
-
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Vegan Options:</strong>
-  <%= @restaurant.options %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @restaurant.source %>
-</p>
-
-<p>
-  <strong>Cuisine:</strong>
-  <%= @restaurant.cuisine.name%>
-</p>
-
-<%= link_to 'Back', restaurants_path %>
-
-<div class="all-restaurants">
-    <% @restaurants.order('updated_at DESC').each do |r| %>
-    <div class="card-text">
-    <h3><%= link_to(restaurant_name(r), restaurant_path(r)) %></h3>
-    <p><img src="<%= r.image_url %>" alt="<%= r.name %>" height="200" width="270"></p><br>
-    <p><strong>Name: </strong><%= r.name %></pr>
-    <p><strong>Vegan Options:</strong> <%= r.options %></p>
-    <p><strong>Cuisine: </strong><%= r.cuisine.name %></p>
-    <%= link_to 'Read more', r %>
-    </p>
-    <br><br>
-    </div>
-    <% end %>
+<div>
+<h3>Reviews</h3>
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+  <%= f.text_area :content, placeholder: 'Add your review here', class: 'form-control' %>
+  <br />
+  <%= f.submit 'Post Your Review', class: 'btn btn-custom' %>
+<% end %>
+<br />
+<%= display_reviews %>
 </div>

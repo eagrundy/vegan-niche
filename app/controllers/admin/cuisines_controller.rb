@@ -5,6 +5,7 @@ class Admin::CuisinesController < ApplicationController
 
     def new
         @cuisine = Cuisine.new
+        @cuisine.restaurants.build
     end
 
     def create
@@ -24,7 +25,6 @@ class Admin::CuisinesController < ApplicationController
     private
 
     def cuisine_params
-        params.require(:cuisine).permit(:name, restaurants_attributes: [:name, :address, :options, :source, :image_url])
+        params.require(:cuisine).permit(:name, restaurants_attributes: [:name, :options, :source, :image_url])
     end
-end
 end

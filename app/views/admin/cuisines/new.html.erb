@@ -1,21 +1,19 @@
 <h1>New Cuisine</h1>
 
-<%= render partial: 'restaurants/errors', locals: {model: @cuisine}%>
-
-<%= form_with(model: @cuisine) do |f| %>
-    <%= f.label("Name:") %>
+<%= form_with(model: [:admin, @cuisine], local: true) do |f| %>
+    <%= f.label("Cuisine Name:") %><br>
     <%= f.text_field(:name) %> <br>
-    <hr>
-    New Restaurants: <br>
+    <br><br>
+    <h3>New Restaurant For this New Cuisine: </h3>
     <%= f.fields_for :restaurants do |r|%>
-        <%= r.label("Name:") %>
-        <%= r.text_field(:name) %> <br>
-        <%= r.label("Vegan Options:") %>
-        <%= r.text_area(:options) %> <br>
-        <%= r.label("Source:") %>
-        <%= r.text(:source) %> <br>
-        <%= r.label("Image:") %>
-        <%= r.text(:image_url) %> <br>
+        <%= f.label :image %><br>
+        <%= f.text_field :image_url %><br><br>
+        <%= r.label("Name:") %><br>
+        <%= r.text_field(:name) %><br><br>
+        <%= r.label("Vegan Options:") %><br>
+        <%= r.text_area(:options) %><br><br>
+        <%= r.label("Source:") %><br>
+        <%= r.text_field(:source) %><br><br>
     <% end %>
     <%= f.submit %>
 <% end %>

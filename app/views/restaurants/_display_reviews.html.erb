@@ -1,0 +1,10 @@
+<% reviews.each do |review| %>
+    </div>
+        <div class="col-md-10">
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to "#{ review.user.username }, user_path( review.user ) %></h5>
+                <p class="card-text"><%= review.content %></p>
+            </div>
+        </div>
+    </div>
+<% end %>

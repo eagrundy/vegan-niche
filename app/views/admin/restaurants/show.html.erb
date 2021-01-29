@@ -1,34 +1,14 @@
-<h1><%= restaurant_name(@restaurant)%></h1>
-
-<p>
-  <%= @restaurant.image_url %>
-</p>
-<br>
-
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Vegan Options:</strong>
-  <%= @restaurant.options %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @restaurant.source %>
-</p>
-
-<p>
-  <strong>Cuisine:</strong>
-  <%= @restaurant.cuisine.name%>
-</p>
-
-<%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', admin_restaurants_path %>
+<br><br><br>
+<div class="bigbox">
+  <div class="box1">
+  <br>
+  <h2><strong><u><%= @restaurant.name %></u></strong></h2>
+  <p><img src="<%= @restaurant.image_url %>" height="200" width="270"></p>
+  <p><strong>Vegan Options:</strong> <%= @restaurant.options %></p><br>
+  <p><strong>Info Source:</strong> <%= @restaurant.source %></p><br>
+  <p><strong>Cuisine: </strong><%= @restaurant.cuisine.name %></p>
+  <h6><p><strong>Updated at: </strong> <%= @restaurant.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></p></h6><br>
+  <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %>
+  <%= link_to 'Back', admin_restaurants_path %>
+  </div>
+</div>

@@ -11,4 +11,8 @@ module RestaurantsHelper
     def restaurant_name(restaurant)
         "#{restaurant.name}"
     end
+
+    def cuisine_name(cuisine)
+        "#{cuisine.name}"
+    end
 end
