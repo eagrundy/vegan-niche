@@ -1,5 +1,7 @@
 <h1>New Cuisine</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @cuisine} %>
+
 <%= form_with(model: [:admin, @cuisine], local: true) do |f| %>
     <%= f.label("Cuisine Name:") %><br>
     <%= f.text_field(:name) %> <br>

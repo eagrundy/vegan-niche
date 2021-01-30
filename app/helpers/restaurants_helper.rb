@@ -24,8 +24,4 @@ module RestaurantsHelper
         end
     end
 
-
-    def authorized_review?
-        logged_in? && @review.user_id == current_user
-    end
 end

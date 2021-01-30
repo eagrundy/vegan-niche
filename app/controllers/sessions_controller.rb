@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
     # require 'securerandom'
 
-    def home
-    end
-
     def new
         @user = User.new
     end
@@ -15,8 +12,9 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect_to user_path(@user)
+            flash[:alert] = "You are signed in!"
         else
-            flash[:error] = "Email and/or Password incorrect"
+            
             redirect_to login_path
         end
     end
@@ -30,7 +28,6 @@ class SessionsController < ApplicationController
             u.password = SecureRandom.hex(9)
         end
         session[:user_id] = @user.id
-      
         redirect_to user_path(@user)
     end
 

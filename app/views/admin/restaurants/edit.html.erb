@@ -1,5 +1,7 @@
 <h1>Editing Restaurant</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @restaurant} %>
+
 <%= render partial: 'form' %>
 
 <%= link_to 'Show', admin_restaurant_path(@restaurant) %> |

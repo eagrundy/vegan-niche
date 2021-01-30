@@ -1,17 +1,18 @@
-<ul>
+<h2>
   <% if logged_in? %>
-  <li><%= link_to 'Home', restaurants_path %></li>
-  <li><%= link_to 'Cuisines', cuisines_path %></li>
+  <%= link_to 'Home', restaurants_path %> |
+  <%= link_to 'Cuisines', cuisines_path %> |
   <% if current_user.admin? %>
-  <li><%= link_to 'Admin Restaurants', admin_restaurants_path %></li>
+  <%= link_to 'Admin Restaurants', admin_restaurants_path %> |
   <% end %>
-  <li><%= link_to 'My Account', user_path(current_user) %></li>
-  <li><%= link_to 'Logout', logout_path, method: :delete %> </li>
+  <%= link_to 'My Account', user_path(current_user) %> |
+  <%= link_to 'Sign Out', logout_path, method: :delete %>
   <% end %>
+  <br><br>
   <% if logged_in? %>
   <%= form_tag restaurants_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
     <%= text_field_tag :search %>
     <%= submit_tag "Search", name: nil, class: "btn btn-outline-success" %>
     <% end %>
 <% end %>
-  </ul>
+</h2>
