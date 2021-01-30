@@ -11,4 +11,5 @@ module ApplicationHelper
     def user_is_authenticated
         !!current_user
     end
+
 end

@@ -49,7 +49,7 @@ class UsersController < ApplicationController
             flash[:notice] = "Your account has been deleted!"
             redirect_to root_path
         else
-            flash[:message] = "Not authorized to delete."
+            flash[:message] = "Not authorized to delete"
             redirect_to user_path
         end
     end

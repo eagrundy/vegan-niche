@@ -23,4 +23,9 @@ module RestaurantsHelper
             render partial: 'restaurants/display_reviews', locals: { reviews: @reviews }
         end
     end
+
+
+    def authorized_review?
+        logged_in? && @review.user_id == current_user
+    end
 end

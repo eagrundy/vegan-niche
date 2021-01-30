@@ -1,7 +1,5 @@
 class ReviewsController < ApplicationController
-    def new
-        @review= Review.new
-    end
+    before_action :current_user, only: [:destroy]
     
     def create
         @review = Review.new(review_params)
@@ -16,9 +14,9 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find(params[:id])
-        @review.destroy
-        redirect_to admin_restaurants_path
+        Review.find(params[:id]).destroy
+        flash[:success] = "Review deleted!"
+        redirect_to restaurants_path
     end
 
     private

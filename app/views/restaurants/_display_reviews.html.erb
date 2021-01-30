@@ -1,13 +1,14 @@
 <h3><u> Reviews </u></h3>
 <% reviews.each do |review| %>
+    <ul>
     <h5> By: <%= review.user.username %></h5>
     <h6> Reviewed on: <%= review.user.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h6>
     <%= review.generate_stars %><br><br>
     <%= review.content %><br><br>
+    <% if current_user == review.user %>   
+    <%= link_to "Delete Your Review", review_path(review), method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+    </ul>
 <% end %>
+    
 
-<br>
-<% if current_user == @user %>
-<%= link_to "Edit Your Review", edit_user_path %> <br><br>
-<%= link_to "Delete Your Review", user_path(@user), method: :delete, data: { confirm: "You sure?" } %>
-<% end %>

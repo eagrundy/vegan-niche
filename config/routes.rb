@@ -15,14 +15,14 @@ Rails.application.routes.draw do
   
   resources :users
   resources :restaurants, only: [:index, :show]
-  resources :reviews, only: [:create]
+  resources :reviews, only: [:create, :destroy]
   
   resources :cuisines,  only: [:new, :create, :index, :show] do
     resources :restaurants, only: [:new, :create, :index, :show]
   end
 
   # resources :restaurants do
-  #   resources :reviews, only: [:create]
+  #   resources :reviews, only: [:create, :edit, :update]
   # end
 
 
