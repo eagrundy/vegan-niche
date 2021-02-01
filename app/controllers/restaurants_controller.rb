@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
         @review = Review.new
         @reviews = @restaurant.reviews.order(id: :desc)
+        @review_average = Review.where(:restaurant_id => params[:id]).average(:rating).to_i
     end
     
 end

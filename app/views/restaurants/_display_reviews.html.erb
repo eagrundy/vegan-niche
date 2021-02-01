@@ -1,4 +1,6 @@
+
 <h3><u> Reviews </u></h3>
+<h4>Average Rating: <%= @review_average %></h4><br>
 <% reviews.each do |review| %>
     <ul>
     <h5> By: <%= review.user.username %></h5>
@@ -8,6 +10,7 @@
     <% if current_user == review.user %>   
     <%= link_to "Delete Your Review", review_path(review), method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
+    <hr />
     </ul>
 <% end %>
     

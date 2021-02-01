@@ -21,7 +21,7 @@ class UsersController < ApplicationController
             @user = User.find(params[:id])
             @user_restaurants = Restaurant.where(user_id: @user.id)
         else
-            redirect_to '/'
+            redirect_to '/login'
         end
     end
 

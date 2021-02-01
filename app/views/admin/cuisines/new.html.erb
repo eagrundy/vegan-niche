@@ -8,9 +8,9 @@
     <br><br>
     <h3>New Restaurant For this New Cuisine: </h3>
     <%= f.fields_for :restaurants do |r|%>
-        <%= f.label :image %><br>
-        <%= f.text_field :image_url %><br><br>
-        <%= r.label("Name:") %><br>
+        <%= r.label("Image:") %><br>
+        <%= r.text_field(:image_url) %><br><br>
+        <%= r.label("Restaurant Name:") %><br>
         <%= r.text_field(:name) %><br><br>
         <%= r.label("Vegan Options:") %><br>
         <%= r.text_area(:options) %><br><br>

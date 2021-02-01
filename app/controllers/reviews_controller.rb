@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
         if @review.valid?
             @review.save
+            flash[:sucess] = "Review created!"
         else
             flash[:notice] = "Review cannot be blank!"
         end 
@@ -23,10 +24,10 @@ class ReviewsController < ApplicationController
 
     def review_params
         params.require(:review).permit(
-            :content,
-            :rating,
-            :user_id,
-            :restaurant_id
-        )
+        :content,
+        :rating,
+        :user_id,
+        :restaurant_id
+    )
     end
 end

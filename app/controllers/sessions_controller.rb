@@ -8,13 +8,11 @@ class SessionsController < ApplicationController
     def create
         # byebug
         @user = User.find_by(email: params[:email])
-        # return head(:forbidden) unless user.authenticate(user_params[:password]) 
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
             flash[:alert] = "You are signed in!"
+            redirect_to user_path(@user)
         else
-            
             redirect_to login_path
         end
     end
