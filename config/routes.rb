@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   
   resources :users
+  
   resources :restaurants, only: [:index, :show]
   resources :reviews, only: [:create, :destroy]
   

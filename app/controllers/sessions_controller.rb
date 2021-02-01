@@ -10,16 +10,16 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            flash[:alert] = "You are signed in!"
+            flash[:message] = "You are signed in!"
             redirect_to user_path(@user)
         else
+            flash[:alert] = "Incorrect email and/or password. Try again."
             redirect_to login_path
         end
     end
         
 
     def facebook
-        # binding.pry
         @user = User.find_or_create_by(email: auth['info']['email']) do |u|
             u.username = auth['info']['name']
             u.email = auth['info']['email']

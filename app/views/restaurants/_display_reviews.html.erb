@@ -4,7 +4,7 @@
 <% reviews.each do |review| %>
     <ul>
     <h5> By: <%= review.user.username %></h5>
-    <h6> Reviewed on: <%= review.user.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+    <h6> Reviewed on: <%= review.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h6>
     <%= review.generate_stars %><br><br>
     <%= review.content %><br><br>
     <% if current_user == review.user %>   

@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
         if params[:search]
             @restaurants = Restaurant.search_by_name(params[:search])
         else
-        @restaurants = Restaurant.all
+            @restaurants = Restaurant.all
         end
     end
 
