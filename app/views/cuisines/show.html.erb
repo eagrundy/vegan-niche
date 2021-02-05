@@ -1,5 +1,5 @@
 <h1> <%= @cuisine.name %> </h1>
 
 <% @cuisine.restaurants.order('updated_at DESC').each do |restaurant|%>
-    <h2><%= link_to(restaurant_name(restaurant), restaurant_path(restaurant)) %></h2>
+    <h2><%= link_to(restaurant.name, cuisine_restaurant_path(restaurant)) %></h2>
 <% end %>

@@ -19,8 +19,6 @@ module RestaurantsHelper
     def display_reviews
         if @reviews.empty?
             content_tag :div, "This restaurant does not have any reviews", class: 'alert alert-dark text-center'
-        else
-            render partial: 'restaurants/display_reviews', locals: { reviews: @reviews }
         end
     end
 

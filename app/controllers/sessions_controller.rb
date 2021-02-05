@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     # require 'securerandom'
+    skip_before_action :redirect_if_not_logged_in
 
     def new
         @user = User.new

@@ -1,0 +1,14 @@
+<b><h3>All Reviews for </b><i><u><%= @restaurant.name %></u></i></h3>
+
+<h4><u>Average Rating:</u>  <%= @review_average %></h4><br>
+<% @reviews.each do |review| %>
+    <b><h5> By: </b><%= review.user.username %></h5>
+    <h6> Reviewed on: <%= review.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+    <%= review.generate_stars %><br><br>
+    <%= review.content %><br><br>
+    <% if current_user == review.user %>   
+    <%= link_to "Delete Your Review", review_path(review), method: :delete, data: { confirm: "Are you sure?" } %> |
+    <%= link_to "Edit Your Review", edit_restaurant_review_path(@restaurant, review) %>
+    <% end %>
+    <hr />
+<% end %>

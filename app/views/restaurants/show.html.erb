@@ -14,20 +14,13 @@
 <br>
 <div>
   <hr />
-    <h3>Review this restaurant</h3>
-      <%= form_for(@review) do |f| %>
-        <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-        <%= f.label("Rating:") %>
-        <%= f.select(:rating, 1..5) %> <br><br>
-        <%= f.text_area :content, placeholder: 'Add your review here', class: 'form-control' %>
-        <br><br>
-        <%= f.submit 'Post Your Review', class: 'btn btn-custom' %>
-    <% end %>
-    <hr />
-    <br />
-    
-    <%= display_reviews %>
-
+  <h3>Share your thoughts</h3>
+  <h3><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %></h3>
+  <br>
   <hr />
-</div>
+  <div>
+  <%= render partial: "reviews/index" %>
+  </div>
+  <%= display_reviews %>
   
+</div>

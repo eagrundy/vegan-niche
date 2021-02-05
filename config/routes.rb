@@ -4,28 +4,43 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
-  
-  
   delete '/logout' => 'sessions#destroy'
+  
 
   namespace :admin do
-    resources :cuisines,  only: [:new, :create, :index, :show, :edit]
-    resources :restaurants, only: [:show, :new, :create, :edit, :update, :destroy, :index]
+    resources :cuisines,  only: [:new, :create, :index, :show]
+    resources :restaurants
   end
   
   resources :users
+  resources :reviews
   
-  resources :restaurants, only: [:index, :show]
-  resources :reviews, only: [:create, :destroy]
-  
-  resources :cuisines,  only: [:new, :create, :index, :show] do
-    resources :restaurants, only: [:new, :create, :index, :show]
+  resources :cuisines,  only: [:index, :show] do
+    resources :restaurants, only: [:index, :show]
   end
-
-  # resources :restaurants do
-  #   resources :reviews, only: [:create, :edit, :update]
-  # end
-
-
+  
+  resources :restaurants, only: [:index, :show] do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+  end
+  
+  # resources :restaurants
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# nested route
+# new and edit, and index or show
+# friday at 6pm et
+

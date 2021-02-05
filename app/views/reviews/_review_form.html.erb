@@ -1,0 +1,17 @@
+<%= form_for([@restaurant, @review]) do |f| %>
+    <%= f.hidden_field :restaurant_id %>
+    <%= f.hidden_field :user_id %>
+<div class="field">
+    <%= f.label("Rating:") %>
+    <%= f.select(:rating, 1..5) %> 
+</div><br>
+<div class="field">
+    <%= f.text_area :content, placeholder: 'Add your review here', size: "35x5" %>
+</div>
+<br>
+<div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
+<br>
+<%= link_to 'Back', @restaurant %>

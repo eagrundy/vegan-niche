@@ -1,6 +1,6 @@
 <h1>Cuisines</h1>
 <ul>
 <% @cuisines.order('name ASC').each do |cuisine| %>
-    <li><%= link_to(cuisine.name, cuisine_path(cuisine)) %></li>
+    <li><%= link_to(cuisine.name, cuisine_restaurants_path(cuisine)) %></li>
 <% end %>
 </ul>
