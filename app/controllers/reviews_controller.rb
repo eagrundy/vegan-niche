@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
     before_action :set_review, only: [:edit, :update, :destroy]
     
     def index
-       
         @reviews = @restaurant.reviews.order(id: :desc)
         # @review_average = Review.where(:restaurant_id => params[:restaurant_id]).average(:rating).to_i
         @review_average = @restaurant.reviews.average(:rating)
@@ -27,7 +26,7 @@ class ReviewsController < ApplicationController
         if @review.valid?
             @review.save
             # try to use just .save
-            # current_user.review.build
+            # current_user.review.build instead of @review.user_id = current_user.id
         else
             flash[:alert] = "Review can't be blank!"
         end
